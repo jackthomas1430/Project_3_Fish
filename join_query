@@ -1,0 +1,5 @@
+SELECT p.*, t.*
+FROM PopulationData p
+JOIN TemperatureData t ON p.Region = t.Region
+WHERE p.YEAR = 2020
+AND t.Date BETWEEN '2020-01-01' AND '2020-12-31';
