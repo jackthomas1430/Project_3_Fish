@@ -4,7 +4,6 @@
 ## Project Contributors
 * Jack Thomas
 * Julie Ramsey
-* Luis Llamas
 * Nicole Navarijo
 * Prashant C
   
