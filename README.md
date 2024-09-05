@@ -1,4 +1,5 @@
 # Project-3
+
 ## Analyzing Regional Water Temperature and Salmon Population Spawning Dynamics Across Pacific Northwest Sites.
 
 ## Project Contributors
@@ -34,36 +35,30 @@ https://www.webapps.nwfsc.noaa.gov/apex/f?p=261:40::::RP,40:G_CURRENT_ARCHIVE:53
 - Ethical Action: Consider the broader social implications of your findings.
 
 Recommendations:
--Clear Communication.
--Compliance and Sensitivity
+- Clear Communication.
+- Compliance and Sensitivity
 
 ## Caveats
 
 ## Tools Used in This Project: 
-
-### Data Processing and Analysis
-
-### Web Development
-HTML5: For structuring the content.
-CSS: For styling and layout.
-JavaScript: For interactivity and dynamic content.
-
-### Libraries and Frameworks
-
-
-### APIs and External Services
-
-### Development Tools
-* Visual Studio Code: For code editing and development.
-* GitHub: For repository hosting and collaboration.
-
-### Collaboration and Communication: Slack and Zoom
+- ETL (Extract, Transform, Load) Tools:
+  - Python: Used for writing scripts to extract and transform data.
+  - Pandas: Python library used for data extraction, transformation, and analysis.
+  - CSV files: Used for storing and retrieving structured data.
+  - SQL queries (Join Query file): For extracting and merging data from databases.
+  - PostgreSQL: To store cleaned and transformed data in a structured format with multiple tables.
+  - Matplotlib: Used for creating detailed and customizable plots.
+- Web Development
+  - HTML5: For structuring the content.
+  - CSS: For styling and layout.
+  - JavaScript: For interactivity and dynamic content.
+- Visual Studio Code: For code editing and development.
+- GitHub: For repository hosting and collaboration.
+- Collaboration and Communication: Slack and Zoom
    
 
 ## References:
-- Data for this dataset was taken from public data shared by                   and is being used for educational purposes only.
+- Data for this dataset was taken from public data shared by <https://or.water.usgs.gov/cgi-bin/grapher/graph_all_setup.pl?basin_id=umpqua&site_id=14317450#step2              and is being used for educational purposes only.
 - This project utilized OpenAI's GPT-4 model to provide trouble shooting solutions during the development process.
-- 
-- 
 - Google/Stack Overflow to get syntax for adapting to code.
 
