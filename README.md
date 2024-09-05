@@ -1,49 +1,43 @@
 # Project-3
-
+## Analyzing Regional Water Temperature and Salmon Population Spawning Dynamics Across Pacific Northwest Sites.
 
 ## Project Contributors
 * Jack Thomas
 * Julie Ramsey
 * Nicole Navarijo
 * Prashant C
-  
-  
-     
+ 
 ## Project Overview
+This project blends environmental science with data engineering, leveraging ETL workflows and database design to provide actionable insights on salmon populations in the Pacific Northwest.
 
-
-## Features
-
-* 
-*
-* 
+## The Problem
+The Pacific Northwest is home to various salmon species, and their populations are deeply affected by environmental factors like water temperature. Scientists and environmentalists need data-driven insights to monitor these populations and understand how climate change impacts them. So, we in our group asked: How can we harness data to uncover trends and correlations in water temperature and salmon populations across different regions?"
 
 See included PowerPoint for summary of key findings and visualizations.
 
 ## Data Sources
-<https://> 
+<https://or.water.usgs.gov/cgi-bin/grapher/graph_all_setup.pl?basin_id=umpqua&site_id=14317450#step2
+https://www.webapps.nwfsc.noaa.gov/apex/f?p=261:40::::RP,40:G_CURRENT_ARCHIVE:53> 
 
-
-## Getting Started
 ## Ethical Considerations Made:
-For the Fisheries project, ethical considerations were addressed to ensure responsible handling of data and interactions with the public.
 
-Here are some specific ethical considerations for our project:
+🚨 Accuracy and Data Integrity🚨
+- Consideration: Ensuring the accuracy of the data is critical because inaccurate information could lead to incorrect conclusions and, consequently, harmful decisions.
+- Ethical Action: Double-check data sources, apply rigorous data cleaning, and document all transformations to maintain data integrity. Provide transparency in your methodology so that others can replicate or validate your results.
 
-* Privacy and Consent
-  We ensured that the data collected about businesses, such as addresses, ratings, or owner information, was used responsibly and in compliance with privacy laws.
+🚨 Environmental Impact🚨
+- Consideration: The analysis focuses on environmental data, which is highly sensitive and can have far-reaching implications for conservation and sustainability efforts.
+- Ethical Action: Highlight the importance of using the data to support positive environmental actions, such as protecting vulnerable salmon populations or mitigating climate change effects.
 
-  We avoided capturing personal data of individuals visiting or reviewing the establishments such as posting user reviews without consent.
+🚨 Impact on Indigenous and Local Communities 🚨
+- Consideration: Many salmon populations are in regions with Indigenous communities who may rely on these fish for cultural, economic, or subsistence purposes. Environmental decisions influenced by your data could have direct effects on these communities..
+- Ethical Action: Consider the broader social implications of your findings.
 
-* Data Source Legitimacy
-We verified that our data sources are legitimate and that we had the right to use the data, and we ensured compliance with terms of service for the data obtained from the third-party sources.
-
-* Accuracy and Fairness
-We have ensured that all information presented on the map is accurate and fairly represents the businesses, and have avoided any bias that could unfairly harm or benefit particular establishments.
+Recommendations:
+-Clear Communication.
+-Compliance and Sensitivity
 
 ## Caveats
-
-
 
 ## Tools Used in This Project: 
 
