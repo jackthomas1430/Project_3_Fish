@@ -59,6 +59,7 @@ Recommendations:
 
 ## References:
 - Data for this dataset was taken from public data shared by <https://or.water.usgs.gov/cgi-bin/grapher/graph_all_setup.pl?basin_id=umpqua&site_id=14317450#step2              and is being used for educational purposes only.
+- <https://seaborn.pydata.org/tutorial.html> for using an additional library outside of our course.
 - This project utilized OpenAI's GPT-4 model to provide trouble shooting solutions during the development process.
 - Google/Stack Overflow to get syntax for adapting to code.
 
