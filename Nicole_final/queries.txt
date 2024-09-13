@@ -1,0 +1,244 @@
+--STAGGERED fall/spring comparison
+
+SELECT 
+t.year,
+AVG(t.avg_daily_temp) as spring_daily_temperatures,
+SUM (p.total_spawners) as fall_spawners
+FROM (
+SELECT year, recovery_domain AS region, run_timing as run_time, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain, run_timing
+) as p
+JOIN( 
+SELECT year, region, run_time, AVG(daily_mean_water_temp) AS avg_daily_temp
+FROM temperature 
+GROUP BY year, region, run_time
+) as t ON t.year = p.year + 3 AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+
+AND p.run_time = 'Fall'
+AND t.run_time = 'Spring'
+GROUP by t.year
+
+
+
+
+-- fall/spring comparison
+
+SELECT 
+t.year,
+AVG(t.avg_daily_temp) as spring_daily_temperatures,
+SUM (p.total_spawners) as fall_spawners
+FROM (
+SELECT year, recovery_domain AS region, run_timing as run_time, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain, run_timing
+) as p
+JOIN( 
+SELECT year, region, run_time, AVG(daily_mean_water_temp) AS avg_daily_temp
+FROM temperature 
+GROUP BY year, region, run_time
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+
+AND p.run_time = 'Fall'
+AND t.run_time = 'Spring'
+GROUP by t.year
+
+
+
+
+--whole avg temp/total population
+
+
+SELECT 
+t.year,
+AVG(t.avg_daily_temp) as avg_daily_temperatures,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, AVG(daily_mean_water_temp) AS avg_daily_temp
+FROM temperature 
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+GROUP by t.year
+
+
+
+
+
+--yearly avg temp in Willamette region
+
+SELECT 
+p.region, 
+t.year,
+AVG(t.avg_daily_temp) as avg_daily_temperatures,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, AVG(daily_mean_water_temp) AS avg_daily_temp
+FROM temperature 
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+AND p.region = 'Willamette/Lower Columbia'
+GROUP by t.year, p.region
+
+
+
+--yearly avg temp in Oregon coast region
+
+SELECT 
+p.region, 
+t.year,
+AVG(t.avg_daily_temp) as avg_daily_temperatures,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, AVG(daily_mean_water_temp) AS avg_daily_temp
+FROM temperature 
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+AND p.region = 'Oregon Coast'
+GROUP by t.year, p.region
+
+
+--yearly avg temp in Interior Columbia region
+
+SELECT 
+p.region, 
+t.year,
+AVG(t.avg_daily_temp) as avg_daily_temperatures,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, AVG(daily_mean_water_temp) AS avg_daily_temp
+FROM temperature 
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+AND p.region = 'Interior Columbia'
+GROUP by t.year, p.region
+
+
+
+
+--number of hot days in Willamette region
+
+SELECT 
+p.region, 
+t.year,
+SUM(t.hot_days) as hot_days,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, COUNT(*) AS hot_days
+FROM temperature 
+WHERE daily_mean_water_temp >14.9
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+AND p.region = 'Willamette/Lower Columbia'
+GROUP by t.year, p.region
+
+
+--number of hot days in Oregon Coast
+
+SELECT 
+p.region, 
+t.year,
+SUM(t.hot_days) as hot_days,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, COUNT(*) AS hot_days
+FROM temperature 
+WHERE daily_mean_water_temp >14.9
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+AND p.region = 'Oregon Coast'
+GROUP by t.year, p.region
+
+
+
+--number of hot days in Interior Columbia
+
+SELECT 
+p.region, 
+t.year,
+SUM(t.hot_days) as hot_days,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, COUNT(*) AS hot_days
+FROM temperature 
+WHERE daily_mean_water_temp >14.9
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+AND p.region = 'Interior Columbia'
+GROUP by t.year, p.region
+
+
+
+
+--total number of hot days in all regions combined
+
+SELECT 
+t.year,
+SUM(t.hot_days) as hot_days,
+SUM (p.total_spawners) as total_spawners
+FROM (
+SELECT year, recovery_domain AS region, SUM(number_of_spawners) AS total_spawners
+FROM population 
+GROUP BY year, recovery_domain
+) as p
+JOIN( 
+SELECT year, region, COUNT(*) AS hot_days
+FROM temperature 
+WHERE daily_mean_water_temp >14.9
+GROUP BY year, region
+) as t ON t.year = p.year AND p.region = t.region
+
+WHERE t.year IN (2013,2014,2015,2016,2017,2018,2019)
+GROUP by t.year
