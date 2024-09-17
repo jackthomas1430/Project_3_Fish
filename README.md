@@ -38,16 +38,15 @@ Recommendations:
 - Clear Communication.
 - Compliance and Sensitivity
 
-## Caveats
 
 ## Tools Used in This Project: 
 - ETL (Extract, Transform, Load) Tools:
   - Python: Used for writing scripts to extract and transform data.
   - Pandas: Python library used for data extraction, transformation, and analysis.
   - CSV files: Used for storing and retrieving structured data.
-  - SQL queries (Join Query file): For extracting and merging data from databases.
+  - SQL queries (Join Query file): For extracting and merging data.
   - PostgreSQL: To store cleaned and transformed data in a structured format with multiple tables.
-  - Matplotlib: Used for creating detailed and customizable plots.
+  - Matplotlib ans Seaborn: Used for creating detailed and customizable plots.
 - Web Development
   - HTML5: For structuring the content.
   - CSS: For styling and layout.
